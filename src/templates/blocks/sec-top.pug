@@ -1,0 +1,21 @@
+- var mainNav = {top: 'Home',about: 'About us',portfolio: 'Portfolio',pricing: 'Pricing',team: 'Team',blog: 'Blog',contact: 'Contact'}
+.sec-wrap
+  .sec-top.wrap
+    .sec-top__header
+      .sec-top__logo.logo
+        a(href="#", title="logo").logo__link
+          img(src="assets/images/logo.png", alt="logo").logo__img
+      .sec-top__menu.menu
+        nav
+          +nav('main-nav', 'Home')
+    .sec-top__info
+      h1.top-info__heading Our Clients Are Our First Priority #[span Welcome to Bino]
+      .divider
+        span
+      p.top-info__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quibusdam iure eum ea obcaecati excepturi soluta et accusantium. Veritatis odit sunt error quae? Voluptatem excepturi at perspiciatis officiis mollitia pariatur!
+      .buttons
+        a(href="#", title="title").top-info__btn Get started now
+        a(href="#", title="title").top-info__btn Learn more
+  .sec-wrap__icon
+    a(href="#", title="title").sec-wrap__link
+      +icon('icon1')
