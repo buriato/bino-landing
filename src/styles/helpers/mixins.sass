@@ -1,0 +1,111 @@
+// font-face mixin
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false )
+  @font-face
+    font-family: $font-family
+    font-weight: $weight
+    font-style: $style
+
+    @if $asset-pipeline == true
+      src: font-url('#{$file-path}.eot')
+      src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype')
+    @else
+      src: url('#{$file-path}.eot')
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype')
+
+
+
+// rem font size
+@function rem($size)
+  $remSize: $size / 16
+  @return $remSize * 1rem
+
+@mixin font-size($size)
+  font-size: $size*1px
+  font-size: rem($size)
+
+
+// Define vertical, horizontal, or both position
+@mixin center($position)
+  position: absolute
+
+  @if $position == 'y'
+    top: 50%
+    transform: translateY(-50%)
+
+  @else if $position == 'x'
+        left: 50%
+        transform: translate(-50%)
+
+  @else if $position == 'xy'
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+
+// Using the mixin
+//.foo
+ // @include center(xy)
+
+//.foo-parent
+//  position: relative
+//
+
+%clearfix
+  *zoom: 1
+
+  &:before, &:after
+    content: " "
+    display: table
+
+  &:after
+    clear: both
+// use @extend %clearfix
+
+
+@mixin min-max($min-width, $max-width, $padding)
+  min-width: $min-width
+  max-width: $max-width
+  padding: 0 $padding
+  box-sizing: border-box
+  margin: 0 auto
+
+@mixin btn($bg: $black, $fs: 9px,$lh: 13px,$ls: 0.54px,$br: 40px,$w: 114px,$clr: $white)
+  width: $w
+  color: $clr
+  font-size: $fs
+  line-height: $lh
+  letter-spacing: $ls
+  background-color: $bg
+  border-radius: $br
+  padding: 13px 0
+  display: block
+  text-align: center
+  text-transform: uppercase
+  margin: 25px 0
+  text-decoration: none
+  @content
+  &:hover
+    background-color: lighten($bg, 15%)
+
+// media queries
+
+@mixin media($maw)
+  @media (max-width: $maw)
+    @content
+
+@mixin desktop
+  @media (max-width: 1400px)
+    @content
+
+@mixin laptop
+  @media (max-width: 992px)
+    @content
+
+@mixin tablet
+  @media (max-width: 768px)
+    @content
+
+@mixin phone
+  @media (max-width: 480px)
+    @content
