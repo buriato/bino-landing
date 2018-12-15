@@ -70,23 +70,70 @@
   box-sizing: border-box
   margin: 0 auto
 
-@mixin btn($bg: $black, $fs: 9px,$lh: 13px,$ls: 0.54px,$br: 40px,$w: 114px,$clr: $white)
-  width: $w
-  color: $clr
-  font-size: $fs
-  line-height: $lh
-  letter-spacing: $ls
+@mixin btn($bg: $red, $two-button: false)
+  width: 225px
+  border-radius: 3px
   background-color: $bg
-  border-radius: $br
-  padding: 13px 0
-  display: block
-  text-align: center
-  text-transform: uppercase
-  margin: 25px 0
+  border: 2px solid $bg
+  box-shadow: 0 2px 5px rgba(0,0,0,.25)
+  font-size: 14px
+  font-weight: 700
+  line-height: 16px
+  padding: 18px 0
   text-decoration: none
+  text-align: center
+  display: inline-block
+  text-transform: uppercase
+  color: $white
+  box-sizing: border-box
+  transition: all .2s ease-in-out
   @content
   &:hover
-    background-color: lighten($bg, 15%)
+    background-color: darken($red, 10%)
+    border-color: darken($red, 10%)
+  @if $two-button == true
+    &:first-child
+      margin-right: 25px
+    &:last-child
+      background-color: transparent
+      border-color: $white
+    &:hover
+      &:last-child
+        border-color: $red
+
+
+// divider
+
+@mixin divider($line-color: $light-gray)
+  display: block
+  width: 7px
+  position: relative
+  margin: 20px auto
+  &::after, &::before
+    content: ''
+    width: 80px
+    height: 1px
+    background-color: $line-color
+    display: block
+    position: absolute
+    top: 50%
+    transform: translateY(-1px)
+  &::before
+    left: -90px
+
+  &::after
+    right: -90px
+  span
+    text-align: center
+    &::after
+      content: ''
+      width: 7px
+      height: 7px
+      border-radius: 50%
+      background-color: $red
+      display: block
+
+
 
 // media queries
 
