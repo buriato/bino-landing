@@ -1,5 +1,12 @@
 .buttons
   margin-top: 60px
 
+
+
 .top-info__btn
   @include btn($bg: $red, $two-button: true)
+  @include media(560px)
+    display: block
+    margin: 10px auto
+    &:first-child
+      margin: 15px auto

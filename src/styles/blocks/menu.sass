@@ -2,9 +2,13 @@
   display: flex
   justify-content: space-between
   flex-wrap: wrap
+  @include media(560px)
+    justify-content: center
 
 .main-nav__item
   margin: 0 5px
+  @include tablet
+    margin: 5px
 
 .main-nav__link
   color: $light-gray
@@ -18,3 +22,6 @@
   &:hover
     color: $red
     border-bottom-color: $red
+  @include tablet
+    margin-bottom: 0
+    border-bottom: none
