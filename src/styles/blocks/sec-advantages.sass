@@ -1,0 +1,79 @@
+.sec-advant
+  border-bottom: 1px solid $advant-line
+  padding-bottom: 60px
+  margin-bottom: 140px
+  +laptop()
+    padding-bottom: 50px
+    margin-bottom: 50px
+
+.sec-advant__block
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+
+.sec-advant__elem
+  flex-basis: 23.5%
+  margin: 20px 0
+  text-align: center
+  transition: all .2s
+  &:hover
+    .sec-advant__icon
+      transform: rotate(45deg)
+      border-color: $red
+    .icon
+      transform: translate(-50%,-50%) rotate(-45deg)
+    .sec-advant__title
+      color: $red
+  +tablet()
+    flex-basis: 49%
+  +phone()
+    flex-basis: 100%
+
+
+.sec-advant__icon
+  width: 73px
+  height: 73px
+  border: 1px solid $advant-border-gray
+  position: relative
+  margin: 20px auto
+  transition: all .2s
+  .icon
+    +center(xy)
+    fill: $red
+    transition: all .2s
+  .icon-icon2
+    width: 32px
+    height: 12px
+  .icon-icon3
+    width: 27px
+    height: 23px
+  .icon-icon4
+    width: 30px
+    height: 35px
+  .icon-icon5
+    width: 25px
+    height: 25px
+
+.sec-advant__title
+  font-family: $main-font
+  text-transform: uppercase
+  color: $gray
+  font-weight: 600
+  font-size: 18px
+  line-height: 20px
+  &::after
+    content: ''
+    width: 41px
+    height: 1px
+    background-color: #888
+    border-bottom: 1px solid #e1e1e1
+    display: block
+    margin: 15px auto
+.sec-advant__text
+  font-family: $secondary-font
+  font-weight: 300
+  font-size: 12px
+  line-height: 20px
+  letter-spacing: .05rem
+  margin: 15px 0
+  color: $advant-gray
