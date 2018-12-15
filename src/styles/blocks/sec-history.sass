@@ -1,0 +1,53 @@
+.sec-history
+  display: flex
+  justify-content: space-between
+  margin: 140px auto
+  +laptop()
+    margin: 50px 0
+  +media(680px)
+    flex-direction: column
+
+.sec-history__left
+  flex-basis: 43.2%
+  margin-right: 80px
+  +laptop()
+    margin-right: 25px
+    align-self: center
+  +media(680px)
+    margin-right: 0
+
+.sec-history__img
+  display: block
+  max-width: 100%
+
+.sec-history__right
+  flex-basis: calc(100% - 43.2% - 80px)
+  +laptop()
+    flex-basis: calc(100% - 43.2% - 25px)
+  +media(680px)
+    margin-top: 30px
+
+
+.sec-history__title
+  color: $gray
+  font-weight: 700
+  font-size: 36px
+  line-height: 36px
+  text-transform: uppercase
+  letter-spacing: .2rem
+  margin-top: 0
+  padding-left: 25px
+  border-left: 6px solid $red
+  margin-bottom: 30px
+
+.sec-history__text
+  font-size: 14px
+  line-height: 29px
+  color: $advant-gray
+  font-family: $secondary-font
+  margin: 25px 0
+
+.sec-history__btn
+  +btn()
+  +media(680px)
+    text-align: center
