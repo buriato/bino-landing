@@ -1,0 +1,84 @@
+.sec-service
+  background-color: $service-bg
+  max-width: 1920px
+  margin: 140px 0
+  padding: 150px 0
+  position: relative
+  &::after
+    content: ''
+    width: 46%
+    height: 100%
+    display: block
+    background: url('../images/services-bg.jpg') left top no-repeat
+    background-size: cover
+    position: absolute
+    right: 0
+    top: 0
+  +laptop()
+    margin: 50px 0
+    padding: 50px 0
+  +tablet()
+    padding-left: 15px
+    padding-right: 15px
+    &::after
+      display: none
+
+.sec-service__block
+  width: 54%
+  text-align: right
+  +tablet()
+    width: 100%
+
+.sec-service__title
+  color: $light-gray
+  padding-right: 25px
+  border-right: 6px solid $red
+  margin-right: 80px
+  margin-bottom: 30px
+  +tablet()
+    margin-right: 15px
+
+
+.sec-service__elem
+  max-width: 665px
+  margin: 55px 80px 55px auto
+  position: relative
+  &:last-child
+    margin-bottom: 0
+  +tablet()
+    max-width: 100%
+    margin: 25px 0
+    padding-right: 15px
+    padding-left: 80px
+    box-sizing: border-box
+
+.sec-service__text
+  font-size: 14px
+  line-height: 29px
+  color: $advant-gray
+  font-family: $secondary-font
+
+.sec-service__subtitle
+  text-transform: uppercase
+  color: $red
+  font-weight: 600
+  font-size: 18px
+  line-height: 29px
+
+.sec-service__icon
+  width: 64px
+  height: 64px
+  border-radius: 50%
+  background-color: $light-gray
+  border: 5px solid rgba(0, 0, 0, .25)
+  @include center(y)
+  right: -112px
+  z-index: 1
+  .icon
+    width: 30px
+    height: 30px
+    fill: $red
+    @include center(xy)
+  +tablet()
+    left: 8px
+    right: auto
