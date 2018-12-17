@@ -1,0 +1,45 @@
+.case
+  padding: 140px 0
+  background-color: $light-gray
+  +laptop
+    padding: 50px 0
+
+
+.case__text
+  font-size: 14px
+  line-height: 29px
+  margin: 20px 0
+  text-align: center
+  color: $advant-gray
+
+.case__divider
+  +divider($advant-gray)
+
+.case__block
+  display: flex
+  align-items: center
+  margin-top: 60px
+  +tablet
+    flex-direction: column
+
+.case__left
+  flex-basis: 655px
+  position: relative
+  z-index: 1
+  +laptop
+    flex-basis: 50%
+    padding: 30px
+  +tablet
+    padding: 20px
+
+.case__right
+  +laptop
+    flex-basis: 50%
+  +tablet
+    margin-top: 30px
+
+.case__img
+  margin-left: -80px
+  +laptop
+    max-width: 100%
+    margin-left: 0

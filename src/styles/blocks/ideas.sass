@@ -1,0 +1,53 @@
+.ideas
+  background-color: $white
+  box-shadow: 0 3px 5px rgba(0,0,0,.1)
+  padding: 30px 50px 80px
+  text-align: center
+
+.ideas__icon
+  width: 127px
+  height: 127px
+  background-color: $red
+  margin: 50px auto
+  position: relative
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%)
+
+.icon-icon4
+  fill: $white
+  width: 35px
+  height: 40px
+  +center(xy)
+
+.ideas__title
+  font-size: 18px
+  font-weight: 600
+  color: $gray
+  text-transform: uppercase
+  &::after
+    content: ''
+    width: 41px
+    height: 1px
+    background-color: #888
+    border-bottom: 1px solid #e1e1e1
+    display: block
+    margin: 15px auto
+
+.ideas__text
+  font-size: 14px
+  color: $advant-gray
+  line-height: 24px
+  font-family: $secondary-font
+  font-weight: 300
+  letter-spacing: 0.1rem
+
+.ideas__btn
+  //+center(x)
+  margin-top: 20px
+  +btn()
+    width: 145px
+    font-size: 12px
+    line-height: 16px
+    padding: 15px 0
+    display: block
+    margin: 30px auto
+    font-weight: 600
