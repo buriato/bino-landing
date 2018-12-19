@@ -28,4 +28,15 @@ li
   @extend .sec-title
   text-align: center
   color: $gray
+  &+p
+    font-size: 14px
+    line-height: 29px
+    margin: 20px 0
+    text-align: center
+    color: $advant-gray
 
+
+.divider
+  @include divider($advant-gray)
+.divider_light
+  @include divider($light-gray)
