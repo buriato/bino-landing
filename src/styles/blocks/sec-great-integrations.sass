@@ -1,0 +1,33 @@
+.great
+  padding: 140px 0
+  background-color: $light-gray
+  +laptop
+    padding: 50px 0
+
+.great__block
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  margin-top: 50px
+  +laptop
+    justify-content: center
+  +tablet
+    justify-content: center
+
+.great__elem
+  flex-basis: 18%
+  background-color: $white
+  box-shadow: 0 1px 3px rgba(31,31,31,.09)
+  margin: 15px 0
+  height: 100px
+  position: relative
+  +laptop
+    flex-basis: 30%
+    margin: 1.5%
+  +tablet
+    flex-basis: 48%
+    margin: 1%
+  .great__img
+    display: block
+    max-width: 100%
+    +center(xy)
