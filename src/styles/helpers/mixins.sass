@@ -16,13 +16,13 @@
 
 
 // rem font size
-@function rem($size)
-  $remSize: $size / 16
-  @return $remSize * 1rem
-
-@mixin font-size($size)
-  font-size: $size*1px
-  font-size: rem($size)
+//@function rem($size)
+//  $remSize: $size / 16
+//  @return $remSize * 1rem
+//
+//@mixin font-size($size)
+//  font-size: $size*1px
+//  font-size: rem($size)
 
 
 // Define vertical, horizontal, or both position
@@ -50,6 +50,9 @@
 //.foo-parent
 //  position: relative
 //
+
+@mixin trans($time: .2s)
+  transition: all $time ease-in-out
 
 %clearfix
   *zoom: 1

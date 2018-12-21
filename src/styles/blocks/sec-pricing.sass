@@ -1,0 +1,99 @@
+.price
+  margin: 140px 0
+  +laptop()
+    margin: 50px 0
+
+.price__block
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  margin-top: 40px
+  +tablet
+    justify-content: center
+
+.price__elem
+  flex-basis: 32.4%
+  margin-top: 20px
+  background-color: $light-gray
+  +tablet
+    flex-basis: 45%
+    margin: 20px 2.5%
+
+  &:hover
+    .price__top
+      background-color: $red
+
+    .price__value
+      color: $red
+
+
+.price__elem--red
+  .price__top
+    background-color: $red
+  .price__value
+    color: $red
+  .price__btn
+    background-color: $red
+    border-color: $red
+
+.price__top
+  background-color: $advant-gray
+  padding-bottom: 90px
+  +trans()
+
+.price__name
+  font-size: 24px
+  font-weight: 600
+  text-transform: uppercase
+  letter-spacing: .1rem
+  color: $white
+  margin: 0
+  text-align: center
+  padding: 40px 0
+
+.price__number
+  width: 153px
+  background-color: $white
+  border: 10px solid rgba(244,245,249,.25)
+  border-radius: 50%
+  margin: -86px auto 0
+  padding: 46px 0
+
+.price__value
+  text-align: center
+  font-size: 39px
+  font-family: $secondary-font
+  color: $advant-gray
+  font-weight: 700
+  line-height: 40px
+  margin: 0
+  +trans()
+  span
+    display: block
+    font-size: 12px
+    line-height: 21px
+    font-weight: 400
+    color: $advant-gray
+
+.price__list
+  text-align: center
+  margin: 40px 0
+  li
+    font-size: 14px
+    line-height: 20px
+    margin: 20px 0
+    color: $advant-gray
+    font-weight: 600
+
+.price__btn
+  +btn($advant-gray)
+    width: 145px
+    font-size: 12px
+    line-height: 16px
+    padding: 15px 0
+    display: block
+    margin: 30px auto
+    font-weight: 600
+
+.price__bottom
+  padding-bottom: 20px

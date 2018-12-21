@@ -18,5 +18,5 @@ const config = {
   ]
 };
 
-import('owl.carousel.min');
+// import('owl.carousel.min');
 module.exports = config;
