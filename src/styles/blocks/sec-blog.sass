@@ -2,6 +2,8 @@
   padding: 140px 0
   background-color: $light-gray
   border-top: 1px solid #d8d9db
+  +laptop
+    padding: 50px 0
 
 .blog__block
   display: flex
@@ -12,6 +14,45 @@
   flex-basis: 50%
   display: flex
   flex-wrap: wrap
+  +laptop
+    flex-basis: 100%
+    &:nth-of-type(odd)
+      .b-item__picture
+        order: 2
+      .b-item__info
+        order: 1
+        &::before
+          border: 30px solid transparent
+          border-left: 25px solid $red
+          left: auto
+          right: -55px
+    &:nth-of-type(even)
+      .b-item__picture
+        order: 1
+      .b-item__info
+        order: 2
+        &::before
+          border: 30px solid transparent
+          border-right: 25px solid $red
+          left: -55px
+          right: auto
+  +media(580px)
+    &:nth-of-type(odd),&:nth-of-type(even)
+      .b-item__picture
+        order: 1
+        flex-basis: 100%
+      .b-item__info
+        order: 2
+        flex-basis: 100%
+        &::before
+          display: none
+      .b-item__img
+        width: auto
+        max-width: 100%
+        margin: 0 auto
+        height: auto
+
+
 
 .blog__elem--reverse
   .b-item__picture
@@ -22,7 +63,6 @@
       border-right: 30px solid transparent
       border-left: 25px solid $red
       left: auto
-
       right: -55px
 
 .b-item__picture
@@ -33,6 +73,8 @@
   max-width: 100%
   height: 100%
   object-fit: cover
+  +laptop
+    width: 100%
 
 .b-item__info
   flex-basis: 50%
@@ -48,6 +90,8 @@
     border-right: 25px solid $red
     +center(y)
     left: -55px
+  +media(1200px)
+    padding: 20px 15px
 
 .b-item
   &__text, &__category, &__title
