@@ -1,0 +1,38 @@
+.offer
+  background: url("../images/free-bg.jpg") center no-repeat
+  -webkit-background-size: cover
+  background-size: cover
+  padding: 140px 0
+  text-align: center
+  position: relative
+  &::after
+    content: ''
+    display: block
+    width: 100%
+    height: 100%
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 1
+    background-color: rgba(0,0,0,.6)
+  +laptop
+    padding: 50px 0
+
+.offer__wrap
+  position: relative
+  z-index: 2
+
+.offer__title, .offer__text
+  color: $white
+  line-height: 36px
+  margin: 12px 0
+.offer__title
+  font-size: 36px
+  span
+    font-weight: 600
+.offer__text
+  font-size: 18px
+
+.offer__btn
+  margin-top: 55px
+  +btn()
