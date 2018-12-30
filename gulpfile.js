@@ -57,7 +57,7 @@ function templates() {
     .src(paths.templates.pages)
     .pipe(
       pug({
-        pretty: true
+        pretty: false
       })
     )
     .on(
@@ -80,16 +80,16 @@ function styles() {
     .pipe(sourcemaps.init())
     .pipe(
       sass({
-        outputStyle: "expanded"
+        outputStyle: "compressed"
       })
     )
     .on("error", notify.onError())
-    // .pipe(
-    //   cssunit({
-    //     type: "px-to-rem",
-    //     rootSize: 16
-    //   })
-    // )
+    .pipe(
+      cssunit({
+        type: "px-to-rem",
+        rootSize: 16
+      })
+    )
     .pipe(autoprefixer(["last 15 versions"]))
     .pipe(sourcemaps.write())
     .pipe(
@@ -213,5 +213,13 @@ gulp.task(
     clean,
     gulp.parallel(styles, templates, images, svg, fonts, scripts),
     gulp.parallel(watch, server)
+  )
+);
+
+gulp.task(
+  "build",
+  gulp.series(
+    clean,
+    gulp.parallel(styles, templates, images, svg, fonts, scripts)
   )
 );
