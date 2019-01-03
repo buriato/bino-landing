@@ -32,6 +32,7 @@
   display: inline-block
   margin: 5px 18px
   transition: color .2s
+
   &:hover
     color: $red
 
@@ -43,6 +44,7 @@
 
 .portfolio__elem
   flex-basis: 25%
+  //+trans(width, .3s)
   +tablet
     flex-basis: 50%
   +phone
@@ -75,10 +77,12 @@
       margin-bottom: 25px
       background-color: $white
       display: block
+
     span
       display: block
       margin: 15px 0
       font-size: 14px
+
       &:first-child
         font-family: $secondary-font
         font-size: 24px
@@ -94,9 +98,10 @@
     position: absolute
     left: 0
     top: 0
-    background-color: rgba(231,76,60,.8)
+    background-color: rgba(231, 76, 60, .8)
     opacity: 0
     transition: opacity .3s
+
   &:hover
     p, &::after
       opacity: 1

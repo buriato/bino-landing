@@ -1,16 +1,19 @@
 .footer
   background-color: $service-bg
   padding: 35px 0
+
 .footer__wrap
   display: flex
   justify-content: space-between
   flex-wrap: wrap
   +media(580px)
     justify-content: center
+
 .footer__left, .footer__right
   +media(580px)
     flex-basis: 100%
     margin: 10px 0
+
 .socials
   display: flex
   justify-content: space-between
@@ -18,15 +21,18 @@
   +media(580px)
     justify-content: center
     margin-bottom: 10px
+
 .socials__item
   margin-right: 20px
-.icon
-  fill: $advant-gray
-  width: 20px
-  height: 25px
-  +trans
-  &:hover
-    fill: $red
+
+  .icon
+    fill: $advant-gray
+    width: 20px
+    height: 25px
+    +trans
+
+    &:hover
+      fill: $red
 
 .footer__p
   font-size: 14px
