@@ -37,13 +37,26 @@ $(document).ready(function () {
 
   $('.portfolio__cat-link').on('click', function (e) {
     e.preventDefault();
-    var currCat = $(this).attr('href');
-    if (currCat == '.all') {
-      $('.portfolio__elem').fadeIn(600);
+    var currCat = $(this).attr('href'),
+      currElem = $(currCat),
+    notCurrElem = $('.portfolio__elem:not(' + currCat + ')');
+    if (currCat === '.all') {
+      $('.portfolio__elem').addClass('portfolio__elem_show');
+      $('.portfolio__elem').removeClass('portfolio__elem_hide');
     } else {
-      console.log(currCat);
-      $('.portfolio__elem:not(' + currCat + ')').fadeOut(600);
-      $(currCat).fadeIn(600);
+      if (currElem.hasClass('portfolio__elem_show')){
+        notCurrElem.removeClass('portfolio__elem_show');
+        notCurrElem.addClass('portfolio__elem_hide');
+      } else if(currElem.hasClass('portfolio__elem_hide')) {
+        console.log(currCat);
+        currElem.removeClass('portfolio__elem_hide');
+        currElem.addClass('portfolio__elem_show');
+        notCurrElem.removeClass('portfolio__elem_show');
+        notCurrElem.addClass('portfolio__elem_hide');
+      } else {
+        currElem.addClass('portfolio__elem_show');
+        notCurrElem.addClass('portfolio__elem_hide');
+      }
     }
 
   })

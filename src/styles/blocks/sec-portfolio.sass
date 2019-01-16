@@ -37,6 +37,7 @@
     color: $red
 
 .portfolio__block
+  position: relative
   display: flex
   flex-wrap: wrap
   max-width: 1920px
@@ -44,11 +45,29 @@
 
 .portfolio__elem
   flex-basis: 25%
-  //+trans(width, .3s)
+
+  //+trans(opacity, .5s)
   +tablet
     flex-basis: 50%
   +phone
     flex-basis: 100%
+
+.portfolio__elem_show
+  flex-basis: 25%
+  +tablet
+    flex-basis: 50%
+  +phone
+    flex-basis: 100%
+  animation-name: fadeIn
+  animation-duration: 1s
+  //animation-delay: .2s
+
+.portfolio__elem_hide
+  animation-name: fadeOut
+  animation-duration: 1s
+  //animation-delay: .2s
+  display: none
+
 
 .portfolio__img
   display: block
